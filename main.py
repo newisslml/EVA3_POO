@@ -1,20 +1,40 @@
-from proovedor import Proovedor
-from precio import Precio
-lista = []
-p = Proovedor("Guitierrez","Granos")
-pr = Precio(1,"Arroz",10,p,1,1500,2500)
-lista.append(pr)
+from src.crud.crud_producto import listar_precios, listar_menor_precio
+from src.utils.load_data import load_data
 
-p = Proovedor("Vera","Pastas")
-pr = Precio(2,"Fideos",5,p,2,4500,1500)
-lista.append(pr)
+listado = load_data()
 
-p = Proovedor("Guitierrez","Granos")
-pr = Precio(3,"Arroz vegetal",20,p,3,5000,5500)
-lista.append(pr)
 
-idbuscar = input("Ingrese id a borrar: ")
-lista = pr.agregarproducto(lista,idbuscar)
+def spaces_menus():
+    print("\n")
+    print("·····································")
 
-for q in lista:
-    print(q.mostrarprecio())
+
+def not_option():
+    print("No existe esa opcion, intente nuevamente...")
+
+
+def menu_principal():
+    spaces_menus()
+    print("1. Agregar Producto")
+    print("2. Eliminar Producto")
+    print("3. Listar Productos")
+    option = int(input("Ingrese su Opcion de (1-5): "))
+    return option
+
+
+def algo():
+    print("haciendo algo")
+
+
+    # Loop infinito hasta que el usuario decida Salir = break
+while True:
+    option = menu_principal()
+    match option:
+        case 1:
+            algo()
+        case 2:
+            algo()
+        case 3:
+            listar_menor_precio(listado)
+        case _:
+            not_option()

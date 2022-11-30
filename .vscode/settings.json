@@ -1,0 +1,7 @@
+{
+  "python.analysis.extraPaths": [
+    "./src/entities",
+    "./src/crud",
+    "./src/utils",
+  ]
+}
