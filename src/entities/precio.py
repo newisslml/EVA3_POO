@@ -5,11 +5,10 @@ from src.entities.proveedor import Proveedor
 class Precio(Producto):
     def __init__(self,
                  producto: Producto,
-                 proveedor: Proveedor,
                  idPrecio: int,
                  precioVenta: int,
                  precioLista: int):
-        super().__init__(producto.id, producto.nombre, producto.stock, proveedor)
+        super().__init__(producto.idProducto, producto.nombre, producto.stock, producto.proovedor)
         self.idPrecio = idPrecio
         self.precioVenta = precioVenta
         self.precioLista = precioLista
